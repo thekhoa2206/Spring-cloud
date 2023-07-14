@@ -1,0 +1,11 @@
+server:
+  port: 8003
+hello:
+  message: "Service two"
+
+spring:
+  datasource:
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    username: "root"
+    password: "root"
+    url: "jdbc:mysql://localhost:3306/repair-core"

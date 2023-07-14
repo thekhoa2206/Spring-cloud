@@ -1,0 +1,24 @@
+server:
+  port: 8004
+hello:
+  message: "Service three"
+
+spring:
+  datasource:
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    username: "root"
+    password: "root"
+    url: "jdbc:mysql://localhost:3306/repair-core"
+---
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            provider: "google"
+            client-id: "google-client-id"
+            client-secret: "google-client-secret"
+  scope:
+    - "email"
+    - "profile"
