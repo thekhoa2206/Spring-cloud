@@ -1,10 +1,10 @@
 package com.sapo.coffeeshop.controllers;
 
-import com.dev.lib.services.EnableExampleConfiguration;
 import com.sapo.coffeeshop.models.repository.MySaveRepo;
 import com.sapo.coffeeshop.models.repository.UserRepository;
 import com.sapo.coffeeshop.models.repository.UserRepository1;
 import com.sapo.coffeeshop.models.repository.UserRepository2;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -15,18 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping(value = "/api")
 @RestController
-@EnableExampleConfiguration
 public class AccountController {
     private final UserRepository userRepository;
     private final UserRepository1 userRepository1;
     private final UserRepository2 userRepository2;
     private final MySaveRepo mySaveRepo;
-
-    public AccountController(UserRepository userRepository, UserRepository1 userRepository1, UserRepository2 userRepository2, MySaveRepo mySaveRepo) {
+    private final ModelMapper mapper;
+    public AccountController(UserRepository userRepository, UserRepository1 userRepository1, UserRepository2 userRepository2, MySaveRepo mySaveRepo, ModelMapper mapper) {
         this.userRepository = userRepository;
         this.userRepository1 = userRepository1;
         this.userRepository2 = userRepository2;
         this.mySaveRepo = mySaveRepo;
+        this.mapper = mapper;
     }
 
 
